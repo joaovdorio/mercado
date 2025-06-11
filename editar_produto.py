@@ -1,4 +1,4 @@
-import base, functions, cadastrar_produto
+import base, functions
 
 def alterar() -> None:
     
@@ -41,11 +41,12 @@ def alterar() -> None:
     else: print("Opção inválida. Tente novamente!")
     return
 
-while True:
-    
-    alternativa = int(input("Qual item você deseja alterar?: "))
-    alternativa_item = int(input("1. Alterar NOME \n 2. Alterar SKU \n 3. Alterar CÓDIGO DE BARRAS \n" \
-    "4. Alterar PESO \n 5. Alterar VALOR DE COMPRA \n 6. Alterar VALOR DE VENDA \n 7. Alterar QUANTIDADE \n" \
-    " Digite qual opção deseja alterar: "))
-    alternativa_alterada = input("Digite o novo valor para alterar: ")
+if __name__ == "__main__":
+
+    while True:
+        alternativa = int(input("Qual item você deseja alterar?: "))
+        alternativa_item = int(input("1. Alterar NOME \n 2. Alterar SKU \n 3. Alterar CÓDIGO DE BARRAS \n" \
+        "4. Alterar PESO \n 5. Alterar VALOR DE COMPRA \n 6. Alterar VALOR DE VENDA \n 7. Alterar QUANTIDADE \n" \
+        " Digite qual opção deseja alterar: "))
+        alternativa_alterada = input("Digite o novo valor para alterar: ")
     

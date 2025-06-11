@@ -13,27 +13,41 @@ class Produto:
         self.quantidade = quantidade
         return
 
-def cadastrar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final) -> None:
+def inputar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final) -> None:
     produto = Produto(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final)
     base.listagem.append(produto)
     print("Produto cadastrado com sucesso! \n")
     return
 
-while True:
-    nome = input("Digite o nome do produto: ")
-    sku = input("Digite o SKU do produto: ")
-    cod_barras = int(input("Digite o código de barras (13 dígitos): "))
-    peso = float(input("Digite o peso do produto, em KG: "))
-    valor_compra = float(input("Digite o valor de compra do produto: "))
-    valor_final = float(input("Digite o valor de venda do produto: "))
-    quantidade = int(input("Digite quantos itens serão adicionados em estoque: "))
+ 
+def cadastrar():
+   while True:
+            nome = input("Digite o nome do produto: ")
+            sku = input("Digite o SKU do produto: ")
+            cod_barras = validar_cod_barras()
+            peso = float(input("Digite o peso do produto, em KG: "))
+            valor_compra = float(input("Digite o valor de compra do produto: "))
+            valor_final = float(input("Digite o valor de venda do produto: "))
+            quantidade = int(input("Digite quantos itens serão adicionados em estoque: "))
 
-    cadastrar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final)
-    
-    continuar = input("Deseja cadastrar outro produto? (S/N)   ")
-    if continuar.casefold() != "s":
-        break
-    else: print("Produto cadastrado com sucesso!")
-    functions.exibir_produtos()
+            inputar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final)
+            
+
+            continuar = input("Deseja cadastrar outro produto? (S/N)   ")
+            if continuar.casefold() != "s":
+                print("Produto cadastrado com sucesso!")
+                functions.exibir_produtos()
+                break
+
+def validar_cod_barras():
+    while True:
+        cod_barras = input("Digite o código de barras (13 dígitos): ")
+        if len(cod_barras) == 13:
+            return int(cod_barras)
+        else:
+            print("Código inválido - EAN deve ter 13 dígitos.")
 
 
+if __name__ == "__main__":
+
+    cadastrar()
