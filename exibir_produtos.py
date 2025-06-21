@@ -7,4 +7,3 @@ def exibir_produtos():
         markup = produto.valor_final / produto.valor_compra if produto.valor_compra != 0 else 0
         print(f"Valor adquirido: R${produto.valor_compra} \n Valor de venda: R${produto.valor_final} \n Markup: {markup:.2f}x \n")
         print(f"Quantidade em estoque: {produto.quantidade}")
-

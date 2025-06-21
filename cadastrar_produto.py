@@ -1,6 +1,6 @@
 ##biblioteca de cadastro de produto
 
-import base, functions
+import base, exibir_produtos
 
 class Produto:
     def __init__(self, nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final):
@@ -13,14 +13,14 @@ class Produto:
         self.quantidade = quantidade
         return
 
-def inputar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final) -> None:
+def inputar(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final) -> None: #jogar o cadastro dentro da lista
     produto = Produto(nome, sku, cod_barras, peso, quantidade, valor_compra, valor_final)
     base.listagem.append(produto)
     print("Produto cadastrado com sucesso! \n")
     return
 
  
-def cadastrar():
+def cadastrar(): #receber os valores
    while True:
             nome = input("Digite o nome do produto: ")
             sku = input("Digite o SKU do produto: ")
@@ -36,7 +36,7 @@ def cadastrar():
             continuar = input("Deseja cadastrar outro produto? (S/N)   ")
             if continuar.casefold() != "s":
                 print("Produto cadastrado com sucesso!")
-                functions.exibir_produtos()
+                exibir_produtos.exibir_produtos()
                 break
 
 def validar_cod_barras():

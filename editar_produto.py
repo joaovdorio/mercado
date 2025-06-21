@@ -1,8 +1,8 @@
-import base, functions
+import base, exibir_produtos
 
 def alterar() -> None:
     
-    functions.exibir_produtos()
+    exibir_produtos.exibir_produtos()
     if not base.listagem: return
 
     alternativa = alternativa - 1

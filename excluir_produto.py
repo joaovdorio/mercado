@@ -1,4 +1,4 @@
-import base, functions
+import base, exibir_produtos
 
 def excluir():
     base.listagem.pop(opcao)
@@ -9,7 +9,7 @@ def excluir():
 if __name__ == "__main__":
     
     while True:
-        functions.exibir_produtos()
+        exibir_produtos.exibir_produtos()
         opcao = input("Qual item deseja apagar?")
         opcao -= int(opcao)
         excluir()   
